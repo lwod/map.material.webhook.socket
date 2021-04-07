@@ -6,7 +6,7 @@ import volcano from '@iconify-icons/maki/volcano-11'
 const LocationMarker = ({lat, lng, onClick}) => {
 	return(
 		<div className={'location-marker'} onClick={onClick}>
-			<Icon icon = {wildfire} className = "location-icon"/>
+			<Icon icon = {volcano} className = "location-icon"/>
 		
 		</div>
 	)

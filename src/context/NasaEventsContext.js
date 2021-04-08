@@ -12,24 +12,27 @@ export const NasaEventsProvider = ({children})=>{
 		volcano: false,
 	})
 	
-	const toggle = (eventId)=>{
-		if(eventId===8) {
-			setNasaEvents({
-				...nasaEvents,
-				['wildfire']:true,
-				['volcano']:false,
-			})
-
-		}
+	const toggle = (category, state)=>{
 		
-		if(eventId===12){
-			setNasaEvents({
-				...nasaEvents,
-				['wildfire']:false,
-				['volcano']:true,
-			})
+		setNasaEvents({...nasaEvents, [category.toString()]:state})
+		
+		// if(eventId===8) {
+		// 	setNasaEvents({
+		// 		...nasaEvents,
+		// 		['wildfire']:true,
+		// 		['volcano']:false,
+		// 	})
+		//
+		// }
+		
+		// if(eventId===12){
+		// 	setNasaEvents({
+		// 		...nasaEvents,
+		// 		['wildfire']:false,
+		// 		['volcano']:true,
+		// 	})
 
-		}
+		// }
 		
 		console.log(nasaEvents)
 		

@@ -15,17 +15,24 @@ export const NasaEventsProvider = ({children})=>{
 	const toggle = (eventId)=>{
 		if(eventId===8) {
 			setNasaEvents({
-				wildfire: true,
-				volcano: false,
+				...nasaEvents,
+				['wildfire']:true,
+				['volcano']:false,
 			})
+
 		}
 		
 		if(eventId===12){
 			setNasaEvents({
-				wildfire: false,
-				volcano: true,
+				...nasaEvents,
+				['wildfire']:false,
+				['volcano']:true,
 			})
+
 		}
+		
+		console.log(nasaEvents)
+		
 	}
 	
 	return(

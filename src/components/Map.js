@@ -5,18 +5,17 @@ import {useNasaEvent} from "../context/NasaEventsContext";
 
 const Map = ({center, zoom}) => {
 	
-	const nasa = useNasaEvent()
+	const {nasaEvents} = useNasaEvent()
 	const [nasaEvent, setNasaEvent] = useState('wildfire')
 	
 	useEffect(()=>{
-		if(nasa.nasaEvents.wildfire){
+		if(nasaEvents.wildfire){
 			setNasaEvent('wildfire')
 		}
-		if(nasa.nasaEvents.volcano){
+		if(nasaEvents.volcano){
 			setNasaEvent('volcano')
 		}
-		// console.log(nasa.nasaEvents)
-	},[nasa.nasaEvents])
+	},[nasaEvents])
 	
 	return(
 		<div className={'map'}>

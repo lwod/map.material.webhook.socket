@@ -2,12 +2,12 @@ import React, {useState, useEffect} from 'react'
 import {useNasaEvent} from "./NasaEventsContext";
 
 const ButtonEvent = () => {
-	const nasa = useNasaEvent()
+	const {toggle} = useNasaEvent()
 	
 	const [eventId, setEventId] = useState(8)
 	
 	const clickHandler = () => {
-		nasa.toggle(eventId)
+		toggle(eventId)
 		if(eventId == 8){setEventId(12)}
 		if(eventId == 12){setEventId(8)}
 	}

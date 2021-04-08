@@ -7,14 +7,15 @@ const LocationMarker = ({lat, lng, nasaEventType, onClick}) => {
 
 	const [icon, setIcon] = useState(wildfire)
 	useEffect(()=>{
-		if (nasaEventType==='wildfire'){setIcon(wildfire)}
-		if (nasaEventType==='volcano'){setIcon(volcano)}
+		switch (nasaEventType){
+			case 'wildfire' : setIcon(wildfire); break;
+			case 'volcano' : setIcon(volcano); break;
+		}
 	}, [nasaEventType])
 	
 	return(
 		<div className={'location-marker'} onClick={onClick}>
 			<Icon icon = {icon} className = "location-icon"/>
-		
 		</div>
 	)
 }

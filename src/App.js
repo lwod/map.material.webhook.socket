@@ -4,18 +4,21 @@ import Map from "./components/Map";
 import Main from "./context/Main";
 import Alert from "./context/Alert";
 import {AlertProvider} from "./context/AlertContext";
+import {NasaEventsProvider} from "./context/NasaEventsContext";
+import ButtonEvent from "./context/ButtonEvent";
 
 function App() {
 	
 	return (
-		<AlertProvider>
+		<NasaEventsProvider>
 			<div className="App">
 				<Map/>
+				<ButtonEvent/>
 				
-				<Main/>
-				<Alert/>
+				{/*<Main/>*/}
+				{/*<Alert/>*/}
 			</div>
-		</AlertProvider>
+		</NasaEventsProvider>
 	);
 }
 
